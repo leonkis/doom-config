@@ -63,9 +63,11 @@
 (map! :leader
       :desc "sortiraj mi bafere" "S" #'org-sort-buffer)
 
+
 (setq display-line-numbers-type 'relative)
 
 (setq evil-respect-visual-line-mode t)
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (add-hook 'text-mode-hook 'centered-cursor-mode)
 (setq global-flycheck-mode nil)
+(setq ccm-recenter-at-end-of-file t)
