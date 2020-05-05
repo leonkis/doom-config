@@ -86,3 +86,6 @@
                  (rename-buffer "terminal")))))))
 
 (add-hook 'text-mode-hook 'auto-fill-mode)
+
+(map! :leader
+      :desc "centered cursor mode" "e" #'centered-cursor-mode)
