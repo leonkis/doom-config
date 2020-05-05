@@ -84,3 +84,5 @@
                (progn
                  (ansi-term "/bin/zsh")
                  (rename-buffer "terminal")))))))
+
+(add-hook 'text-mode-hook 'auto-fill-mode)
