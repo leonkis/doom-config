@@ -32,7 +32,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -64,7 +64,6 @@
       :desc "sortiraj mi bafere" "S" #'org-sort-buffer)
 
 
-(setq display-line-numbers-type 'relative)
 
 (setq evil-respect-visual-line-mode t)
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
@@ -89,3 +88,11 @@
 
 (map! :leader
       :desc "centered cursor mode" "e" #'centered-cursor-mode)
+
+(map! :localleader
+      :desc "compile .tex to .pdf" "k" #'TeX-command-run-all 'TeX-clean)
+
+;(after! latex
+;  (add-to-list 'TeX-command-list '("LatexMk" "latexmk -pdflatex='pdflatex -file-line-error -synctex=1' -pdf %t" TeX-run-TeX nil)))
+
+;(setq LaTeX-fill-break-at-separators '(\\\( \\\[))
