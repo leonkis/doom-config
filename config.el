@@ -89,3 +89,13 @@
 
 (map! :leader
       :desc "centered cursor mode" "e" #'centered-cursor-mode)
+
+(defadvice! +latex-no-indent-on-fill-paragraph (orig-fn &rest args)
+  :around #'fill-paragraph
+  (let ((tex-indent-basic 0)
+        (tex-indent-item 0)
+        (tex-indent-arg 0)
+        (TeX-brace-indent-level 0)
+        (LaTeX-indent-level 0)
+        (LaTeX-item-indent 0))
+    (apply orig-fn args)))
