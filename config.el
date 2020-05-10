@@ -89,9 +89,6 @@
 (map! :leader
       :desc "centered cursor mode" "e" #'centered-cursor-mode)
 
-(map! :localleader
-      :desc "compile .tex to .pdf" "k" #'TeX-command-run-all 'TeX-clean)
-
 ;(after! latex
 ;  (add-to-list 'TeX-command-list '("LatexMk" "latexmk -pdflatex='pdflatex -file-line-error -synctex=1' -pdf %t" TeX-run-TeX nil)))
 
