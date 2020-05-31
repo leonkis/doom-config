@@ -98,3 +98,8 @@
         (LaTeX-indent-level 0)
         (LaTeX-item-indent 0))
     (apply orig-fn args)))
+
+(setq counsel-find-file-ignore-regexp (regexp-opt '("synctex")))
+
+(map! :leader
+      :desc "open dired marked files" "O" #'dired-do-find-marked-files)
