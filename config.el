@@ -89,11 +89,6 @@
 (map! :leader
       :desc "centered cursor mode" "e" #'centered-cursor-mode)
 
-;(after! latex
-;  (add-to-list 'TeX-command-list '("LatexMk" "latexmk -pdflatex='pdflatex -file-line-error -synctex=1' -pdf %t" TeX-run-TeX nil)))
-
-;(setq LaTeX-fill-break-at-separators '(\\\( \\\[))
-
 (defadvice! +latex-no-indent-on-fill-paragraph (orig-fn &rest args)
   :around #'fill-paragraph
   (let ((tex-indent-basic 0)
