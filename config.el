@@ -84,7 +84,8 @@
                  (ansi-term "/bin/zsh")
                  (rename-buffer "terminal")))))))
 
-(add-hook 'text-mode-hook 'auto-fill-mode)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'org-mode-hook 'turn-off-auto-fill)
 
 (map! :leader
       :desc "centered cursor mode" "e" #'centered-cursor-mode)
@@ -103,3 +104,4 @@
 
 (map! :leader
       :desc "open dired marked files" "O" #'dired-do-find-marked-files)
+
