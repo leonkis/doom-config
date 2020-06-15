@@ -105,3 +105,7 @@
 (map! :leader
       :desc "open dired marked files" "O" #'dired-do-find-marked-files)
 
+(setq org-plain-list-ordered-item-terminator ?\))
+
+;; Auto-refresh dired on file change
+(add-hook 'dired-mode-hook 'auto-revert-mode)
