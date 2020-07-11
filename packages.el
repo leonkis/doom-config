@@ -53,3 +53,4 @@
 (package! centered-cursor-mode)
 (package! latex-preview-pane)
 (package! evil-escape :disable t)
+(package! auctex :disable t)
