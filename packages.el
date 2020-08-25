@@ -53,3 +53,5 @@
 (package! centered-cursor-mode)
 (package! latex-preview-pane)
 (package! evil-escape :disable t)
+(package! visual-fill-column)
+(package! writeroom-mode)

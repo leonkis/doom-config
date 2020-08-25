@@ -109,3 +109,5 @@
 
 ;; Auto-refresh dired on file change
 (add-hook 'dired-mode-hook 'auto-revert-mode)
+
+(add-hook 'org-mode-hook 'visual-fill-column-mode)
