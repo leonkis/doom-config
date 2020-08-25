@@ -111,3 +111,5 @@
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 
 (add-hook 'org-mode-hook 'visual-fill-column-mode)
+
+(setq org-log-done 'time)

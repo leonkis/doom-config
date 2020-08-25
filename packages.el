@@ -55,3 +55,4 @@
 (package! evil-escape :disable t)
 (package! visual-fill-column)
 (package! writeroom-mode)
+(package! auctex :disable t)
