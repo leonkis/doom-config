@@ -77,7 +77,7 @@
          (interactive)
          (progn
            (let ((name "terminal"))
-             (evil-window-vsplit)
+;;             (evil-window-vsplit)
              (if (get-buffer name)
                  (switch-to-buffer name)
                (progn
