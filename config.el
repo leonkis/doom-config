@@ -90,17 +90,15 @@
 (map! :leader
       :desc "centered cursor mode" "e" #'centered-cursor-mode)
 
-(defadvice! +latex-no-indent-on-fill-paragraph (orig-fn &rest args)
-  :around #'fill-paragraph
-  (let ((tex-indent-basic 0)
-        (tex-indent-item 0)
-        (tex-indent-arg 0)
-        (TeX-brace-indent-level 0)
-        (LaTeX-indent-level 0)
-        (LaTeX-item-indent 0))
-    (apply orig-fn args)))
-
-(setq counsel-find-file-ignore-regexp (regexp-opt '("synctex")))
+;; (defadvice! +latex-no-indent-on-fill-paragraph (orig-fn &rest args)
+;;   :around #'fill-paragraph
+;;   (let ((tex-indent-basic 0)
+;;         (tex-indent-item 0)
+;;         (tex-indent-arg 0)
+;;         (TeX-brace-indent-level 0)
+;;         (LaTeX-indent-level 0)
+;;         (LaTeX-item-indent 0))
+;;     (apply orig-fn args)))
 
 (map! :leader
       :desc "open dired marked files" "O" #'dired-do-find-marked-files)
@@ -113,3 +111,8 @@
 (add-hook 'org-mode-hook 'visual-fill-column-mode)
 
 (setq org-log-done 'time)
+(setq org-ellipsis "▼")
+(remove-hook 'org-load-hook #'+org-init-appearance-h)
+
+(custom-set-faces!
+  '((hl-line solaire-hl-line-face org-indent) :extend t)
