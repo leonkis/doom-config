@@ -112,7 +112,6 @@
 
 (setq org-log-done 'time)
 (setq org-ellipsis "▼")
-(remove-hook 'org-load-hook #'+org-init-appearance-h)
 
-(custom-set-faces!
-  '((hl-line solaire-hl-line-face org-indent) :extend t)
+
+(add-hook 'org-mode-hook (lambda() (org-indent-mode -1)))
