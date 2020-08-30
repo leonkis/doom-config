@@ -101,8 +101,6 @@
 ;;         (LaTeX-item-indent 0))
 ;;     (apply orig-fn args)))
 
-;; (setq counsel-find-file-ignore-regexp (regexp-opt '("synctex")))
-
 (map! :leader
       :desc "open dired marked files" "O" #'dired-do-find-marked-files)
 
@@ -114,4 +112,7 @@
 ;; (add-hook 'org-mode-hook 'visual-fill-column-mode)
 
 (setq org-log-done 'time)
+(setq org-ellipsis "▼")
 
+
+(add-hook 'org-mode-hook (lambda() (org-indent-mode -1)))
