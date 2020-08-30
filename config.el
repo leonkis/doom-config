@@ -65,8 +65,9 @@
 
 
 
-(setq evil-respect-visual-line-mode t)
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+(add-hook 'org-mode-hook 'turn-on-visual-line-mode)
+(setq evil-respect-visual-line-mode t)
 (add-hook 'text-mode-hook 'centered-cursor-mode)
 (setq global-flycheck-mode nil)
 (setq ccm-recenter-at-end-of-file t)
@@ -90,26 +91,27 @@
 (map! :leader
       :desc "centered cursor mode" "e" #'centered-cursor-mode)
 
-(defadvice! +latex-no-indent-on-fill-paragraph (orig-fn &rest args)
-  :around #'fill-paragraph
-  (let ((tex-indent-basic 0)
-        (tex-indent-item 0)
-        (tex-indent-arg 0)
-        (TeX-brace-indent-level 0)
-        (LaTeX-indent-level 0)
-        (LaTeX-item-indent 0))
-    (apply orig-fn args)))
+;; (defadvice! +latex-no-indent-on-fill-paragraph (orig-fn &rest args)
+;;   :around #'fill-paragraph
+;;   (let ((tex-indent-basic 0)
+;;         (tex-indent-item 0)
+;;         (tex-indent-arg 0)
+;;         (TeX-brace-indent-level 0)
+;;         (LaTeX-indent-level 0)
+;;         (LaTeX-item-indent 0))
+;;     (apply orig-fn args)))
 
-(setq counsel-find-file-ignore-regexp (regexp-opt '("synctex")))
+;; (setq counsel-find-file-ignore-regexp (regexp-opt '("synctex")))
 
 (map! :leader
       :desc "open dired marked files" "O" #'dired-do-find-marked-files)
 
-(setq org-plain-list-ordered-item-terminator ?\))
+;; (setq org-plain-list-ordered-item-terminator ?\))
 
 ;; Auto-refresh dired on file change
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 
-(add-hook 'org-mode-hook 'visual-fill-column-mode)
+;; (add-hook 'org-mode-hook 'visual-fill-column-mode)
 
 (setq org-log-done 'time)
+
