@@ -67,7 +67,6 @@
 
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (add-hook 'org-mode-hook 'turn-on-visual-line-mode)
-(setq evil-respect-visual-line-mode t)
 (add-hook 'text-mode-hook 'centered-cursor-mode)
 (setq global-flycheck-mode nil)
 (setq ccm-recenter-at-end-of-file t)
@@ -109,10 +108,20 @@
 ;; Auto-refresh dired on file change
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 
-;; (add-hook 'org-mode-hook 'visual-fill-column-mode)
+(add-hook 'org-mode-hook 'visual-fill-column-mode)
 
 (setq org-log-done 'time)
 (setq org-ellipsis "▼")
 
 
-(add-hook 'org-mode-hook (lambda() (org-indent-mode -1)))
+;; (add-hook 'org-mode-hook (lambda() (org-indent-mode -1)))
+
+(after! org
+  (setq org-startup-indented nil))
+
+(add-hook! 'org-mode-hook (electric-indent-local-mode -1))
+
+(map! :after evil-org
+      :map evil-org-mode-map
+      :i [return] #'+default/newline
+      :i "RET" #'+default/newline)
