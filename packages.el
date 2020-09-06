@@ -55,3 +55,4 @@
 (package! evil-escape :disable t)
 (package! writeroom-mode)
 (package! visual-fill-column)
+;; (package! adaptive-wrap :disable t)
