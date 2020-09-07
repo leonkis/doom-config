@@ -116,12 +116,12 @@
 
 ;; (add-hook 'org-mode-hook (lambda() (org-indent-mode -1)))
 
-(after! org
-  (setq org-startup-indented nil))
+;; (after! org
+;;   (setq org-startup-indented nil))
 
 (add-hook! 'org-mode-hook (electric-indent-local-mode -1))
 
-(map! :after evil-org
-      :map evil-org-mode-map
-      :i [return] #'+default/newline
-      :i "RET" #'+default/newline)
+;; (map! :after evil-org
+;;       :map evil-org-mode-map
+;;       :i [return] #'+default/newline
+;;       :i "RET" #'+default/newline)
