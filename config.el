@@ -65,8 +65,7 @@
 
 
 
-(add-hook 'text-mode-hook 'turn-on-visual-line-mode)
-;; (add-hook 'org-mode-hook 'turn-on-visual-line-mode)
+;;(add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (add-hook 'text-mode-hook 'centered-cursor-mode)
 (setq global-flycheck-mode nil)
 (setq ccm-recenter-at-end-of-file t)
@@ -108,19 +107,18 @@
 ;; Auto-refresh dired on file change
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 
-;; (add-hook 'org-mode-hook 'visual-fill-column-mode)
+(add-hook 'org-mode-hook 'visual-fill-column-mode)
 
-;; (add-hook 'org-mode-hook 'org-indent-mode)
 
 (setq org-log-done 'time)
 (setq org-ellipsis "▼")
 
 ;; (add-hook! 'org-mode-hook (adaptive-wrap-prefix-mode -1))
 
-;; (add-hook! 'org-mode-hook (electric-indent-local-mode -1))
+(add-hook! 'org-mode-hook (electric-indent-local-mode -1))
 
 ;; (after! org
-;;   (setq org-startup-indented nil))
+  ;; (setq org-startup-indented nil))
 
 ;; Commented because no longer needed, since org-indent-mode is in use.
 ;; (map! :after evil-org
@@ -129,10 +127,8 @@
 ;;       :i "RET" #'+default/newline
 ;;       :i "o" #'+default/newline)
 
-;; (after! org
-;;   (setq org-startup-indented t)
-;;   (setq org-indent-mode t))
 
-;; (after! org
-;;   (setq org-adapt-indentation nil))
 
+(setq org-adapt-indentation nil)
+
+(add-hook! 'org-mode-hook 'writeroom-mode)
